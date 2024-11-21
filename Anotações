@@ -1,0 +1,18 @@
+A URL é dividida em duas grandes partes, a primeira que vem antes do ponto de interrogação, que é a base da URL e a
+segunda que vem depois do ponto de interrogação, que é os parâmetros da URL.
+
+Fatiamento - são características das strings e são imutáveis
+
+Método find tem a seguinte estrutura: str.find(sub[, start[, end]])
+- sub é um parâmetro obrigatório
+- start é um parâmetro opcional, caso fornecido, a busca por sub vai ocorrer somente a partir do índice start
+- end também é opcional, caso fornecido, a busca vai até o índice de end.
+- str.find(sub) retorna -1 caso sub não seja encontrado em str
+
+RegEx - são expressões regulares e sempre vai seguir três passos, que são: compilar um padrão, comparar esse padrão com uma string e verificar se
+isso retornou alguma combinação, se esse padrão foi encontrado.
+? - o caractere “?” é um símbolo especial para RegEx indicando que o grupo anterior a ele pode ou não aparecer,
+
+Search - extrair o valor que esteja de acordo com o padrão fornecido (search)
+
+Macth - serve para verificar se o texto está de acordo com o padrão (match)

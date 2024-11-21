@@ -1,0 +1,161 @@
+1) Parâmetros em URLs: Sarah queria aprender mais sobre manipulação de strings, então acessou o site da Alura e
+pesquisou por “manipulação de strings”. Após fazer a busca, ela percebeu que a URL do site havia sido alterada para:
+
+https://www.alura.com.br/busca?query=manipulação+de+strings
+
+Com base nessa URL, selecione a opção que contém o texto que representa os parâmetros da URL:
+Resposta:
+
+query=manipulação+de+strings
+
+“query” é o nome do parâmetro e “manipulação+de+strings” é o valor deste parâmetro. A utilização dos símbolos de adição
+(+) é feita porque não podemos utilizar espaços em branco em URLs. Note que o símbolo “?” não faz parte dos parâmetros,
+pois é apenas o separador: base?parâmetros.
+
+________________________________________________________________________________________________________________________
+
+2) Fatiando nomes: Em formulários na Web é muito comum preenchermos o campo “Nome Completo” com nosso primeiro e último
+nome, por exemplo, “Gabriel Saldanha”. Mas a nossa aplicação pode precisar separar esse valor em duas variáveis, uma
+para armazenar o primeiro e outra para armazenar o último nome. Dado o trecho de código abaixo, selecione a alternativa correta para armazenar o primeiro e último nome em suas respectivas variáveis:
+
+nome_completo = "Gabriel Saldanha"
+
+Resposta:
+
+primeiro_nome = nome_completo[0:7]
+ultimo_nome = nome_completo[8:16]
+
+Precisamos “pular” o espaço em branco entre os dois nomes, assim como fizemos com o símbolo de interrogação “?” na nossa
+URL.
+
+________________________________________________________________________________________________________________________
+
+3) Validando nossa URL: Lucas assistiu ao vídeo sobre o método len e quer usar esse método para verificar se a URL está
+vazia ou não. Marque todas as opções que contêm o código correto para implementar essa verificação:
+
+Resposta:
+if len(url) > 0:
+    …
+else:
+    print(“A URL está vazia!")
+
+Nesse caso o código dentro do escopo do if seria a execução "normal" do programa, e informar ao usuário que a URL está
+vazia ocorre dentro do escopo do else.
+
+
+if len(url) == 0:
+    print(“A URL está vazia!")
+
+O método len recebe um objeto e retorna o tamanho desse objeto. No nosso caso, o método vai retornar quantos caracteres
+url possui, e verificamos se é igual a zero para dizer que está vazia.
+
+________________________________________________________________________________________________________________________
+
+4) Utilizando o método find: Em uma página contendo cursos de Python na Alura, Mariana se deparou com a seguinte URL:
+
+https://www.alura.com.br/curso?curso=python
+
+Querendo extrair o valor do parâmetro curso, Mariana escreveu o seguinte programa:
+url = "https://www.alura.com.br/curso?curso=python"
+indice_curso = url.find("curso")
+indice_valor = indice_curso + len("curso") + 1
+valor = url[indice_valor:]
+print(valor)
+
+Resposta:
+"curso=python"
+O programa da Mariana tem um bug, ela esqueceu de considerar que a palavra "curso" aparece duas vezes na URL.
+
+________________________________________________________________________________________________________________________
+
+5) Validando “quantidade”: Silvia decidiu adicionar uma validação ao seu programa para não permitir que o valor do
+parâmetro quantidade na URL seja 0 (zero) ou vazio. Pedindo ajuda a alguns colegas, ela viu algumas soluções. Marque
+todas as soluções corretas:
+
+Resposta:
+
+quantidade = extrator_url.get_valor_parametro("quantidade")
+if not quantidade:
+    raise ValueError(“Valor  de quantidade deve ser informado e não pode ser igual à zero.”)
+
+O not vai “inverter” o valor booleano da variável quantidade. Ou seja, caso quantidade seja vazia (“”) ou zero (0), vai
+ser convertida em True e então o ValueError vai ser lançado.
+
+ou
+
+quantidade = extrator_url.get_valor_parametro("quantidade")
+if quantidade == 0 or quantidade == “”:
+    raise ValueError(“Valor  de quantidade deve ser informado e não pode ser igual à zero.”)
+
+Apesar de podermos simplificar quantidade == 0 or quantidade == “” substituindo por not quantidade, o código acima está
+correto.
+
+________________________________________________________________________________________________________________________
+
+6) Encontrando o CPF: Depois de assistir ao vídeo sobre extração do CEP de um endereço, Rafaela teve a ideia de fazer
+uma pequena aplicação que extraísse o CPF do usuário a partir de um texto. O texto é o seguinte:
+
+Rafaela Brasil, CPF: 718.457.190-85
+
+Selecione todas as alternativas que representam corretamente a expressão regular para extrair somente o CPF do texto
+acima:
+
+Resposta:
+padrao = “[0-9]{3}[.]{1}[0-9]{3}[.]{1}[0-9]{3}[-]{1}[0123456789]{2}”
+Apesar de ser redundante colocar o {1} após o grupo [.], nossa expressão continua sendo válida. Além disso, também
+podemos optar por expressar [0-9] explicitamente como [0123456789], apesar de deixar nosso padrão menos legível nesse
+caso.
+
+padrao = “[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}”
+Estamos utilizando os quantificadores ,{3} e {2}, e intervalos [0-9] para simplificar o nosso padrão.
+
+________________________________________________________________________________________________________________________
+
+7) Validando URLs para nossa aplicação: Juliana terminou de assistir à aula sobre expressões regulares e escreveu o
+seguinte padrão para validar uma URL:
+
+“(http(s)?://)?(www.)?bytebank.com(.br)?/cambio”
+
+Em seguida, testou diversas URLs para ver quais seriam válidas ou não de acordo com o padrão. As alternativas abaixo
+contêm algumas das URLs testadas por Juliana, marque todas as alternativas que possuam uma URL válida de acordo com o
+padrão fornecido.
+
+Resposta:
+“https://www.bytebank.com.br/cambio”
+Essa URL está de acordo com o formato mais extenso do padrão, ou seja, possui todos os grupos que foram declarados como
+opcionais, por exemplo, https, www e .br
+
+ou
+
+“https://www.bytebank.com”
+Iniciar com “https://www…” é opcional para o padrão fornecido.
+
+________________________________________________________________________________________________________________________
+
+8)
+
+________________________________________________________________________________________________________________________
+
+9)
+
+________________________________________________________________________________________________________________________
+
+10)
+
+________________________________________________________________________________________________________________________
+
+11)
+
+________________________________________________________________________________________________________________________
+
+12)
+
+________________________________________________________________________________________________________________________
+
+13)
+
+________________________________________________________________________________________________________________________
+
+14)
+
+__________________________________________________________________________________
